@@ -20,16 +20,11 @@
 }
 
 /* basic styles */
-.protfolio-main{
-  background-color: var(--portfolio-bg-color);
-}
 
 body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--text);
@@ -60,6 +55,7 @@ h3 {
 
 .logo {
   font-family: "Raleway", sans-serif;
+  font-size: 18px;
   font-weight: 800;
   color: var(--dark);
   text-transform: uppercase;
@@ -86,6 +82,11 @@ h3 {
   color: var(--text);
 }
 
+.contacts .link:hover, 
+.contacts .link:focus {
+  color: var(--primary-brand);
+}
+
 /* main */
 
 .header-section {
@@ -101,9 +102,14 @@ h3 {
   color: var(--dark);
 }
 
+.section-team{
+  background-color: var(--light);
+}
+
 /* button */
 
 .button {
+  font-family: Roboto, sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.5;
@@ -168,7 +174,9 @@ h3 {
 
 /* cards */
 
-
+.cards .item{
+  background-color: var(--primary-bg-color);
+}
 
 .cards .title {
   color: var(--dark);
