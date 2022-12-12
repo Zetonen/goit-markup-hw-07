@@ -54,8 +54,8 @@ h3 {
 /* nav */
 
 .logo {
-  font-family: "Raleway", sans-serif;
   font-size: 18px;
+  font-family: "Raleway", sans-serif;
   font-weight: 800;
   color: var(--dark);
   text-transform: uppercase;
