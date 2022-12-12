@@ -141,7 +141,7 @@ h3 {
 .button.secondary {
   align-items: center;
   padding: 8px 16px;
-  color: var(--accent-color);
+  color: var(--primary-brand);
   background-color: var(--light);
   border: 1px solid var(--portfolio-bg-color);
   border-radius: 5px;
