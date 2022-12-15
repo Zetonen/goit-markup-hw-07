@@ -336,10 +336,25 @@ header {
 .cards-projects {
   display: flex;
   flex-wrap: wrap;
+  row-gap: 48px;
+  column-gap: 24px;
 }
-.cards-projects > .item:not(:nth-child(3n + 1)) {
+
+.cards-projects > .item {
+  max-width: 360px;
+  border: 0.5px solid #f4f4fd;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+  flex-basis: calc((100% - 24px) / 3);
+}
+
+/* .cards-projects > .item:not(:nth-child(3n + 1)) {
   margin-left: 24px;
 }
+
+.cards-projects > .item:nth-child(1),
+.item:nth-child(4) {
+  margin-bottom: 48px;
+} */
 
 .cards-projects .card-content {
   padding-top: 32px;
