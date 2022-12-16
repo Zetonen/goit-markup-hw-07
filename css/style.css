@@ -101,7 +101,6 @@ header > .container {
 
 .nav {
   margin-left: 77px;
-  margin-right: 331px;
 }
 
 .nav-menu {
@@ -117,6 +116,7 @@ header > .container {
 .contacts {
   display: flex;
   justify-content: space-between;
+  margin-left: auto;
 }
 
 .logo {
