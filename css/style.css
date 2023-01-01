@@ -103,8 +103,6 @@ header {
 }
 
 header > .container {
-  padding-top: 24px;
-  padding-bottom: 24px;
   display: flex;
   align-items: center;
 }
@@ -144,6 +142,10 @@ header > .container {
 }
 
 .nav-menu .link {
+  display: block;
+  padding-top: 24px;
+  padding-bottom: 24px;
+
   color: var(--dark);
   font-weight: 600;
 }
@@ -460,6 +462,9 @@ header > .container {
   border-radius: 4px;
   color: var(--subtle-text);
 }
+.customers-list .customers-link {
+  color: #8e8f99;
+}
 
 .customers-list .customers-link:hover,
 .customers-list .customers-link:focus {
@@ -610,4 +615,42 @@ header > .container {
 .media-link.footer-link.icon {
   width: 24px;
   height: 24px;
+}
+
+.active-page .link {
+  position: relative;
+  color: var(--primary-brand);
+}
+
+.active-page .link:hover {
+  color: var(--primary-brand);
+}
+
+.active-page .link::after {
+  /* активна сторінка */
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+
+  border-radius: 2px;
+  background-color: var(--primary-brand);
+}
+
+.active-page .link::before {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  background: linear-gradient(
+    /* це та clip-path дає тінь */ to top,
+    rgba(72, 90, 229, 0.3) -50%,
+    rgba(72, 90, 229, 0) 30%
+  );
+  clip-path: polygon(10% 100%, -10% 15px, 110% 15px, 90% 100%);
 }
