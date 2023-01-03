@@ -127,6 +127,7 @@ ul {
   position: absolute;
   top: 50%;
   left: 50%;
+  padding: 72px 24px 24px;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms var(--timing-function);
 
@@ -139,6 +140,8 @@ ul {
   border-radius: 4px;
 }
 
+/* button close modal */
+
 .backdrop-modal-close {
   position: absolute;
   top: 24px;
@@ -147,11 +150,17 @@ ul {
   width: 24px;
   height: 24px;
 
-  background-color: #e7e9fc;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-
+  background-color: #ffffff;
+  border: none;
   cursor: pointer;
+}
+
+.backdrop-modal-close:active .backdrop-modal-close-svg {
+  opacity: 0;
+}
+
+.backdrop-modal-close:active .backdrop-modal-close-svg.actice {
+  opacity: 1;
 }
 
 .backdrop-modal-close-svg {
@@ -159,10 +168,165 @@ ul {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 8px;
-  height: 8px;
+  width: 24px;
+  height: 24px;
 }
 
+.backdrop-modal-close-svg.actice {
+  opacity: 0;
+}
+
+/* modal title */
+
+.backdrop-modal-title {
+  margin-bottom: 16px;
+
+  text-align: center;
+  color: var(--dark);
+}
+
+/* modal form */
+
+.backdrop-modal-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* conteiner inputs */
+
+.backdrop-modal-form-containertxt {
+  display: flex;
+  flex-direction: column;
+  row-gap: 26px;
+  padding-top: 18px;
+  margin-bottom: 16px;
+
+  color: var(--subtle-text);
+}
+
+.backdrop-modal-form-containertxt-lable {
+  position: relative;
+}
+
+.form-title {
+  position: absolute;
+  top: -24px;
+  left: 0;
+  transition: color 250ms var(--timing-function);
+}
+
+.form-text {
+  display: block;
+  width: 100%;
+  height: 40px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border 250ms var(--timing-function);
+}
+
+.form-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 24px;
+  transition: fill 250ms var(--timing-function);
+}
+
+.form-text:hover,
+.form-text:focus {
+  border: 1px solid var(--primary-brand);
+}
+
+.form-text:hover ~ .form-title,
+.form-text:focus ~ .form-title {
+  color: var(--primary-brand);
+}
+
+.form-text:hover ~ .form-icon,
+.form-text:focus ~ .form-icon {
+  fill: var(--primary-brand);
+}
+
+.form-text:not(:placeholder-shown) ~ .form-icon {
+  opacity: 0;
+}
+
+textarea.form-text {
+  height: 120px;
+  padding-top: 8px;
+  padding-left: 16px;
+}
+
+/* modal policy */
+
+.backdrop-modal-form-policy {
+  position: relative;
+  padding-left: 24px;
+  color: #757575;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.backdrop-modal-form-policy-link {
+  color: var(--primary-brand);
+}
+.backdrop-modal-form-policy-icon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+}
+
+.backdrop-modal-form-policy-icon.disagree {
+  border: 1.25px solid #2e2f42;
+  border-radius: 2px;
+}
+
+.backdrop-modal-form-policy-icon.agree {
+  opacity: 0;
+}
+
+.backdrop-modal-form-policy-checkbox:checked
+  ~ .backdrop-modal-form-policy-icon.agree {
+  opacity: 1;
+}
+
+.backdrop-modal-form-policy-checkbox:checked
+  ~ .backdrop-modal-form-policy-icon.disagree {
+  opacity: 0;
+}
+
+/* modal button submit */
+
+.backdrop-modal-form-sumbmit {
+  padding: 16px 32px;
+  margin: 24px auto 0;
+
+  color: #ffffff;
+  background-color: var(--primary-brand);
+  transition: background-color 250ms var(--timing-function);
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: var(--primary-brand);
+}
 /* header */
 
 header {
@@ -331,6 +495,8 @@ header > .container {
   line-height: 1.5;
   letter-spacing: 0.04em;
   cursor: pointer;
+  transition: background-color 250ms var(--timing-function),
+    box-shadow 250ms var(--timing-function);
 }
 
 .hero .button {
@@ -345,14 +511,14 @@ header > .container {
   transition: box-shadow 250ms var(--timing-function);
 }
 
-.hero .button:hover,
-.hero .button:focus {
+.button:hover,
+.button:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
-.hero .button:active,
-.buttons .button:active {
+.button:active,
+.button:active {
   background-color: #404bbf;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
@@ -721,35 +887,78 @@ header > .container {
 
 /* media */
 
-.media {
+.footer-media {
   margin-left: 120px;
 }
 
-.media > .headline {
+.footer-media-headline,
+.subscribe-title {
   font-weight: 600;
 }
 
-/* social media */
-
-.media > .social-links {
+.footer-media-social {
+  display: flex;
   margin-top: 16px;
   gap: 16px;
 }
 
-.media-link.footer-link {
+.footer-media-social-item-link {
+  display: block;
   padding: 8px;
-  background-color: rgba(255, 255, 255, 0.1);
 
-  /* transition: background-color 250ms var(--timing-function); */
+  color: var(--light);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: background-color 250ms var(--timing-function);
 }
 
-.media-link.footer-link:hover,
-.media-link.footer-link:focus {
+.footer-media-social-item-link-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+.footer-media-social-item-link:hover,
+.footer-media-social-item-link:focus {
   border-color: var(--success);
   background-color: var(--success);
 }
 
-.media-link.footer-link.icon {
-  width: 24px;
-  height: 24px;
+/* subscribe */
+
+.subscribe {
+  margin-left: 80px;
+}
+.subscribe-title {
+  margin-bottom: 16px;
+}
+.subscribe-form {
+  display: flex;
+  gap: 24px;
+}
+
+.subscribe-form-label-email {
+  width: 264px;
+  height: 40px;
+
+  color: rgba(255, 255, 255, 0.6);
+  background-color: var(--dark);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+}
+.subscribe-form-label-button {
+  display: flex;
+  align-items: center;
+  padding: 8px 24px;
+  gap: 16px;
+
+  color: #ffffff;
+  background-color: var(--primary-brand);
+
+  border: var(--primary-brand);
+  border-radius: 4px;
+}
+
+.subscribe-form-label-icon {
 }
