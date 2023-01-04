@@ -203,6 +203,12 @@ ul {
   color: var(--subtle-text);
 }
 
+.backdrop-modal-form-container-lable {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+}
+
 .backdrop-modal-form-container-lable:hover,
 .backdrop-modal-form-container-lable:focus-within {
   color: var(--primary-brand);
@@ -265,6 +271,8 @@ textarea.form-text {
   padding-top: 8px;
   padding-left: 16px;
 
+  line-height: 1.35;
+
   resize: none;
 }
 
@@ -274,6 +282,10 @@ textarea.form-text {
   position: relative;
   padding-left: 24px;
   color: #757575;
+
+  font-size: 12px;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
 }
 
 .visually-hidden {
@@ -424,22 +436,6 @@ header > .container {
 
   border-radius: 2px;
   background-color: var(--primary-brand);
-}
-
-.active-page .link::before {
-  content: "";
-  position: absolute;
-  bottom: 4px;
-  top: 0;
-  left: 0;
-  width: 100%;
-
-  background: linear-gradient(
-    /* це та clip-path дає тінь */ to top,
-    rgba(72, 90, 229, 0.3) -50%,
-    rgba(72, 90, 229, 0) 30%
-  );
-  clip-path: polygon(10% 100%, -10% 15px, 110% 15px, 90% 100%);
 }
 
 .contacts .link {
