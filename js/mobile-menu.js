@@ -36,10 +36,6 @@
   menu.btnOpen.addEventListener("click", toggleMenu);
   menu.btnClose.addEventListener("click", toggleMenu);
 
-  console.log(menu.btnOpen);
-  console.log(menu.btnClose);
-  console.log(menu.menuContainer);
-
   function toggleMenu() {
     menu.menuContainer.classList.toggle("menu-open");
   }
