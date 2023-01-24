@@ -25,6 +25,10 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  margin: 0;
+}
+
 h1,
 h2,
 h3,
@@ -82,14 +86,9 @@ header {
 }
 
 .container {
-  max-width: 428px;
+  max-width: 426px;
   margin: 0 auto;
-}
-
-@media screen and (max-width: 767px) {
-  .container {
-    padding: 0 16px;
-  }
+  padding: 0 15px;
 }
 
 header > .container {
@@ -103,13 +102,14 @@ header > .container {
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 18px;
-  line-height: 1.17;
+  line-height: 1.35;
 
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--dark);
 }
 .logo span {
+  line-height: 1.17;
   color: var(--primary-brand);
 }
 
@@ -149,8 +149,11 @@ header > .container {
 }
 
 .mobile-menu-container-content {
+  display: flex;
+  flex-direction: column;
   position: relative;
   max-width: 448px;
+  height: 100%;
   margin: 0 auto;
 }
 
@@ -179,7 +182,7 @@ header > .container {
 /* mobile--nav-menu */
 
 .mobile-nav-menu {
-  margin-bottom: 284px;
+  margin-bottom: auto;
 }
 .mobile-nav-menu-list {
 }
@@ -210,6 +213,7 @@ header > .container {
 
 /* mobile-contacts-list */
 .mobile-contacts-list {
+  margin-top: 48px;
   margin-bottom: 48px;
 }
 .mobile-contacts-list-item:not(:last-child) {
@@ -641,7 +645,7 @@ header > .container {
   padding-bottom: 96px;
 }
 
-@media screen and (max-width: 1439px) {
+@media screen and (max-width: 1199px) {
   .about {
     font-weight: 500;
   }
@@ -657,7 +661,7 @@ header > .container {
   }
 }
 
-@media screen and (max-width: 1439px) {
+@media screen and (max-width: 1199px) {
   .about-list-item-title {
     font-weight: 700;
     font-size: 36px;
@@ -669,8 +673,6 @@ header > .container {
 
 .about-list-item-icon {
   display: none;
-  width: 264px;
-  height: 112px;
   margin-bottom: 8px;
   padding: 24px 100px;
 
@@ -683,6 +685,13 @@ header > .container {
 .about-list-item-title {
   margin-bottom: 8px;
 }
+
+@media screen and (max-width: 767px) {
+  .about-list-item-title {
+    text-align: center;
+  }
+}
+
 /* projects */
 
 .projects {
@@ -813,12 +822,6 @@ header > .container {
 
 /* customers-container */
 
-@media screen and (max-width: 767px) {
-  .customers > .container {
-    padding: 0;
-  }
-}
-
 /* customers-title */
 
 .customers-title {
@@ -870,8 +873,8 @@ header > .container {
 /* customers-list-item-link-icon */
 
 .customers-list-item-link-icon {
-  width: 110px;
-  height: 56px;
+  width: 108px;
+  height: 54px;
 }
 
 /* footer */
@@ -918,9 +921,13 @@ header > .container {
   margin-bottom: 16px;
 
   font-weight: 500;
-  text-align: center;
 }
 
+@media screen and (max-width: 767px) {
+  .footer-social-media-title {
+    text-align: center;
+  }
+}
 /* footer-social-media-list */
 
 .footer-social-media-list {
@@ -1163,7 +1170,7 @@ header > .container {
   /* tablet-container */
 
   .container {
-    max-width: 736px;
+    max-width: 766px;
   }
 
   /* tablet-header */
@@ -1211,6 +1218,7 @@ header > .container {
     font-size: 16px;
     line-height: 1.5;
 
+    color: #2e2f42;
     letter-spacing: 0.02em;
   }
 
@@ -1244,7 +1252,15 @@ header > .container {
   /* tablet-contacts-list */
 
   .contacts-list {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  /* tablet-contacts-list-item */
+
+  .contacts-list-item {
+    display: inline-flex;
   }
 
   /* tablet-contacts-list .link*/
@@ -1340,6 +1356,14 @@ header > .container {
     width: calc((100% - 24px) / 2);
   }
 
+  /* tablet-team-container */
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    .team > .container {
+      max-width: 582px;
+    }
+  }
+
   /* tablet-team-list */
 
   .team-list {
@@ -1350,15 +1374,23 @@ header > .container {
     row-gap: 64px;
   }
 
-  @media screen and (min-width: 768px) and (max-width: 1440px) {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
     .team-list {
-      max-width: 552px;
+      max-width: 582px;
     }
   }
 
   /* tablet-team-list-item */
   .team-list-item {
     margin: 0;
+  }
+
+  /* tablet-customers-container */
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    .customers > .container {
+      max-width: 582px;
+    }
   }
 
   /* tablet-customers-list */
@@ -1376,13 +1408,15 @@ header > .container {
   /* tablet-customers-list-item-link-icon */
 
   .customers-list-item-link-icon {
-    width: 104px;
+    width: 102px;
   }
+  /* tablet-footer-container */
 
-  @media screen and (min-width: 768px) and (max-width: 1439px) {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
     .footer > .container {
+      max-width: 552px;
+
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
       column-gap: 24px;
       row-gap: 72px;
@@ -1391,7 +1425,6 @@ header > .container {
   /* tablet-footer-logo-box */
 
   .footer-logo-box {
-    max-width: 264px;
   }
 
   .footer-logo-box .logo {
@@ -1403,12 +1436,6 @@ header > .container {
   /* tablet-subscribe */
   .subscribe {
     width: 453px;
-  }
-
-  @media screen and (min-width: 768px) and (max-width: 1440px) {
-    .subscribe {
-      margin: 0 auto;
-    }
   }
 
   /* tablet-subscribe-form */
@@ -1450,11 +1477,10 @@ header > .container {
 
 /* media desktop*/
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1200px) {
   /* desktop-container */
   .container {
-    max-width: 1160px;
-    padding: 0 15px;
+    max-width: 1158px;
   }
 
   /* desktop-header */
@@ -1468,6 +1494,7 @@ header > .container {
   /* desktop-contacts-list */
   .contacts-list {
     display: flex;
+    flex-direction: row;
     gap: 40px;
   }
 
@@ -1483,7 +1510,7 @@ header > .container {
     background: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
       url("../images/hero/people-office-desktop-1440.jpg");
     background-position: center;
-    background-size: cover;
+    background-size: 1440px;
     background-repeat: no-repeat;
     padding-top: 188px;
     padding-bottom: 188px;
@@ -1497,7 +1524,7 @@ header > .container {
       background: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
         url("../images/hero/people-office-desktop-2880.jpg");
       background-position: center;
-      background-size: cover;
+      background-size: 1440px;
       background-repeat: no-repeat;
     }
   }
@@ -1510,7 +1537,7 @@ header > .container {
       background: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
         url("../images/hero/people-office-desktop-4320.jpg");
       background-position: center;
-      background-size: cover;
+      background-size: 1440px;
       background-repeat: no-repeat;
     }
   }
@@ -1582,9 +1609,6 @@ header > .container {
   }
 
   /* desktop-customers-container */
-  .customers > .container {
-    padding: 0;
-  }
 
   /* desktop-customers-list */
   .customers-list {
