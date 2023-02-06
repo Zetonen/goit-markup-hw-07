@@ -326,6 +326,42 @@ header > .container {
   }
 }
 
+@media screen and (min-width: 429px) and (max-width: 767px) {
+  .hero {
+    background: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      url("../images/hero/people-office-tablet-768.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero {
+      background: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+        url("../images/hero/people-office-tablet-1536.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @media (min-device-pixel-ratio: 3),
+    (-webkit-min-device-pixel-ratio: 3),
+    (min-resolution: 288dpi),
+    (min-resolution: 3dppx) {
+    .hero {
+      background: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+        url("../images/hero/people-office-tablet-2304.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
 .hero-title {
   max-width: 328px;
   margin: 0 auto 72px;
@@ -1288,7 +1324,7 @@ header > .container {
 
   .hero {
     background: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-      url("../images/hero/people-office-tablet-768.jpg");
+      url("../images/hero/people-office-desktop-1440.jpg");
     padding-bottom: 108px;
     background-position: center;
     background-size: cover;
@@ -1301,7 +1337,7 @@ header > .container {
     (min-resolution: 2dppx) {
     .hero {
       background: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-        url("../images/hero/people-office-tablet-1536.jpg");
+        url("../images/hero/people-office-desktop-2880.jpg");
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -1314,7 +1350,7 @@ header > .container {
     (min-resolution: 3dppx) {
     .hero {
       background: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-        url("../images/hero/people-office-tablet-2304.jpg");
+        url("../images/hero/people-office-desktop-4320.jpg");
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -1507,39 +1543,11 @@ header > .container {
   /* desktop-hero */
 
   .hero {
-    background: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-      url("../images/hero/people-office-desktop-1440.jpg");
     background-position: center;
     background-size: 1440px;
     background-repeat: no-repeat;
     padding-top: 188px;
     padding-bottom: 188px;
-  }
-
-  @media (min-device-pixel-ratio: 2),
-    (-webkit-min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    .hero {
-      background: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-        url("../images/hero/people-office-desktop-2880.jpg");
-      background-position: center;
-      background-size: 1440px;
-      background-repeat: no-repeat;
-    }
-  }
-
-  @media (min-device-pixel-ratio: 3),
-    (-webkit-min-device-pixel-ratio: 3),
-    (min-resolution: 288dpi),
-    (min-resolution: 3dppx) {
-    .hero {
-      background: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-        url("../images/hero/people-office-desktop-4320.jpg");
-      background-position: center;
-      background-size: 1440px;
-      background-repeat: no-repeat;
-    }
   }
 
   /* desktop-hero-title */
